@@ -2,14 +2,6 @@ from flask import Flask, render_template, url_for, request,redirect, session
 from datetime import timedelta
 import pyrebase
 config = {
-    "apiKey": "AIzaSyDYlfpxAvq14bqTnlrmVKw7YrJcyXMACOc",
-    "authDomain": "salary-pir.firebaseapp.com",
-    "databaseURL": "https://salary-pir.firebaseio.com",
-    "projectId": "salary-pir",
-    "storageBucket": "salary-pir.appspot.com",
-    "messagingSenderId": "585545884380",
-    "appId": "1:585545884380:web:82c838a49bb436294f8a19",
-    "measurementId": "G-PKJ1MZVKJ1"
 }
 
 firebase = pyrebase.initialize_app(config)
