@@ -1,0 +1,341 @@
+<html>
+<head>
+<style>
+body{
+		background-color: #393939;
+    }
+	.header-spacing{
+		padding-bottom: 70px;
+    }
+    .header{        
+        padding-top: 10px;        
+        font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        color: rgba(0,0,0,.5);
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .5em;
+        position: absolute;
+        width: 100%; 
+        font-size: 1.55em;
+        z-index: 100;
+        text-shadow: .04em .04em 0 #99A3A4;
+    }
+	
+    .header, header:after{
+        font-weight: 900;
+        color: white;
+        white-space: nowrap;
+        display: inline-block;
+        letter-spacing: .1em;
+ 
+    }
+    .header:after{
+        content: attr(data-shadow-text);
+        color: rgba(0,0,0,.35);
+        text-shadow: none;
+        position: absolute;
+        left: .0875em;
+        top: .0875em;
+        z-index: -1;
+        -webkit-mask-image: url(//f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png);
+    }
+   .menu-name{
+		float  :right; 
+		text-align: center;
+		font-size: 27px;
+		font: Arial, Helvetica, sans-serif;
+		color: #2CE532;
+		font-weight: bold;
+		padding-top:25px;
+		padding-left: 30px;
+	}
+  .dropbtn {
+  background-color: #2CE532;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  float:left;
+  margin-top: 20px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #818181;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top:70px;
+  background-color: #f1f1f1;
+  min-width: 200px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+    }
+	.menu-icon > .line {
+    background-color: #292929;
+    height: 2px;
+    display: block;
+}
+.menu-icon > .line + .line {
+    margin-top: 8px;
+}
+.main
+{
+	font: 95% Arial, Helvetica, sans-serif;
+	max-width: 400px;
+	margin: 10px auto;
+	padding: 16px;
+	background-color: white;
+	border-radius: 10px; 
+}
+.mid{
+	text-align:center;
+}
+.select{
+   width: 200px;
+  height: 25px;
+  border: 1px solid #999;
+  font-size: 16px;
+  color: black;
+  background-color: #eee;
+  border-radius: 5px;
+	text-align: center;
+margin-bottom:6px;	
+}
+.select::placeholder{
+	text-align: center;
+	opacity: 0.5;
+}
+.container {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+	margin-left: 22%;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.name{
+	text-align: left;
+	margin-left: 1px;
+		color: #393939;
+		font-weight: bold;
+		padding-left:40px;
+	}
+.container input {  
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color:#A6FC19;
+  border-radius: 50%;
+}
+.container:hover input ~ .checkmark {
+  background-color: #818181;
+}
+.container input:checked ~ .checkmark {
+  background-color: #2CE532;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #818181;
+}
+input[type="submit"],
+input[type="button"]{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 50%;
+	padding: 1.5%;
+	background: #818181;
+	border-bottom: 2px solid black;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;	
+	color: white;
+    border-radius: 20px;
+    font: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+	margin-top:5px;
+    
+}
+input[type="submit"]:hover,
+input[type="button"]:hover{
+	background: #2CE532;
+    color: black;
+}
+.desc{
+	font-size: 16px;
+	color: black;
+	text-align: center; 
+	padding-top: 10px;
+	padding-bottom:10px;
+	
+}
+.reset-all{
+	font: 95% Arial, Helvetica, sans-serif;
+	max-width: 400px;
+	margin: 10px auto;
+	padding: 16px;
+	background-color: white;
+	border-radius: 10px;
+	text-align:center;
+}
+.reset-one
+{
+	font: 95% Arial, Helvetica, sans-serif;
+	max-width: 400px;
+	margin: 10px auto;
+	padding: 16px;
+	background-color: white;
+	border-radius: 10px;
+	text-align:center;	
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="header-spacing">
+    <div class="header">Piripun Properties<br>(Pvt)Ltd.</div>
+    </div>
+	<div class= "cont">
+	<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars"></i> Menu</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="/view_employee/">View/Pay Employee</a>
+    <a href="/add_employee/">Add Employee</a>
+    <a href="/daily_work/">Record/Reset Work</a>
+	<a href="/logout/">Logout</a>
+  </div>
+  <div class="menu-name">Record / Reset Work</div>
+  </div>
+	</div>
+    
+<form class="main" action = "/daily_work/" method = "post">
+	<div class="mid">
+    <select class="select" name= name_list method="GET" action="/daily_work/">
+        <option value="" disabled SELECTED>Select an Employee..</option>
+        {% for i in employees %}
+        <option value= "{{i}}">{{i}}</option>"
+      
+        {% endfor %}
+    </select>
+	</div>
+    
+    <label class="container">
+            <span class="name">Worked Day</span>
+            <input type="radio" name="options" id="option1" value="option1"></input>
+            <span class="checkmark"></span>
+        </label>
+    <label class="container">
+            <span class="name">Not Worked Day</span>
+            <input type="radio" name="options" id="option2" value="option2"></input>
+            <span class="checkmark"></span>
+        </label>
+	<div class="mid">
+   <select class="select" id="over_time" name="over_time">
+        <option value="0" SELECTED>Over-Time Hours</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+    </select>
+	
+    
+    <input type="submit" name = 'btn' value="Submit">
+	</div>
+    
+   </form>
+
+   <form class ="reset-all" action = "/daily_work/" method = "post">
+       <label class="desc">Reset All Employee Records</label>
+       <br>
+    <input class="sub-btn" type="submit" name = "btn" value="Reset All Employees">
+    </form>
+
+      <form class="reset-one" action = "/daily_work/" method = "post">
+      <select class="select" name= name_list method="GET" action="/view_employee/">
+          <option value="" SELECTED disabled>Select an Employee..</option>
+          {% for i in employees %}
+          <option value= "{{i}}">{{i}}</option>"
+          <br>
+          {% endfor %}
+          </select>
+      <input class="sub-btn2" type="submit" name = "btn" value="Reset Employee">
+      </form>
+	  
+	  	<script>
+		/* When the user clicks on the button, 
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+		document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+
+		</script>
+	  </body>
+	  
+</html>

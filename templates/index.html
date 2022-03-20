@@ -1,0 +1,171 @@
+<html>
+    <head>
+        <title>
+            Login
+        </title>
+        <style>
+            body{
+                background-color: #393939;
+            }
+            h1{    
+                text-align: center;
+                font-size: 40px;
+                font: Arial, Helvetica, sans-serif;
+                color: #2CE532;
+                font-weight: bold;
+                padding-top: 1%;
+            }
+            input[type="email"],
+            input[type="password"],
+            select 
+            {
+                -webkit-transition: all 0.30s ease-in-out;
+                -moz-transition: all 0.30s ease-in-out;
+                -ms-transition: all 0.30s ease-in-out;
+                -o-transition: all 0.30s ease-in-out;
+                outline: none;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                width: 100%;
+                background: #fff;
+                margin-bottom: 4%;
+                border: 1px solid #ccc;
+                padding: 3%;
+                color: #555;
+                font: 100% Arial, Helvetica, sans-serif;
+                border-radius: 20px;
+                text-align: center;
+                font-weight: bold;
+            }
+            input[type="email"]:focus,
+            input[type="password"]:focus,
+            select:focus
+            {
+                box-shadow: 0 0 5px #2CE532;
+                padding: 3%;
+                border: 1px solid #2CE532;
+                background-color: #2CE532;
+                color: white;
+            }
+            input[type="email"]::-webkit-inner-spin-button, 
+            input[type="password"]::-webkit-outer-spin-button 
+            { 
+                -webkit-appearance: none; 
+                margin: 0; 
+            }
+
+            .btn{
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                width: 100%;
+                padding: 3%;
+                background: white;
+                border-bottom: 2px solid black;
+                border-top-style: none;
+                border-right-style: none;
+                border-left-style: none;	
+                color: black;
+                border-radius: 20px;
+                font: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                font-weight: bold;
+
+            }
+            .btn:hover{
+                background: #2CE532;
+                color: #fff;
+            }
+            .login-form
+            {
+                font: 95% Arial, Helvetica, sans-serif;
+                max-width: 400px;
+                margin: 10px auto;
+                padding: 5px;
+                background-color: transparent;
+                border-radius: 10px;
+            }
+            .alert-unsuccess
+            {
+                text-align: center;
+                color: yellow;
+                padding-top: 10px;
+                font-family:"Calibri";
+                font-size: 20px;
+            }
+            .header-spacing{
+        padding-bottom: 70px;
+    }
+    .header{        
+        padding-top: 10px;        
+        font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        color: rgba(0,0,0,.5);
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .5em;
+        position: absolute;
+        width: 100%; 
+        font-size: 2.8em;
+        z-index: 100;
+        text-shadow: .04em .04em 0 #99A3A4;
+    }
+    .header, header:after{
+        font-weight: 900;
+        color: white;
+        white-space: nowrap;
+        display: inline-block;
+
+        letter-spacing: .1em;
+ 
+    }
+    .header:after{
+        content: attr(data-shadow-text);
+        color: rgba(0,0,0,.35);
+        text-shadow: none;
+        position: absolute;
+        left: .0875em;
+        top: .0875em;
+        z-index: -1;
+        -webkit-mask-image: url(//f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png);
+    }
+        .description{
+            text-align: center;
+            font: 30px "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            
+        }
+            .desc-border{
+                margin-top: 20px;
+                margin-right: 300px;
+                margin-left: 300px;
+                border-radius: 15px;
+                background-color: #99A3A4;
+                
+            }
+
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+        <div class="header-spacing">
+            <div class="header">Piripun Properties (Pvt)Ltd.</div>
+        </div>
+    <div class="login">
+        <div class="desc-border">
+        <div class="description">
+            Employee Payment Tracker
+        </div>
+            </div>
+        <h1>Login</h1>
+        <form method="post" class="login-form">
+            <input type="email" name="email" placeholder="Email" required="required" />
+            <input type="password" name="password" placeholder="Password" required="required" />
+            <button type="submit" class="btn">Login</button>
+            <div class = "alert-unsuccess">
+                {% if us %}
+                {{us}}
+                {% endif %}
+            </div>
+        </form>
+    </div>
+
+</html>

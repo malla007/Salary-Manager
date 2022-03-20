@@ -1,0 +1,234 @@
+<html>
+<head>
+<style>    
+    body{
+        background-color: #393939;
+    }
+    @import url('https://fonts.googleapis.com/css?family=DM+Sans:500,700&display=swap');
+    .nav-box{
+        box-sizing: border-box;
+    }
+    .nav-box{
+       text-align: center;
+    display: flex;
+    height: 60px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+
+    }
+    .navbar{
+          display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #2CE532;
+    padding: 0 20px;
+    border-radius: 40px;
+    }
+    .navbar-item{
+        color: #818181;
+        padding: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+        text-decoration: none;
+        transition: .3s;
+        margin: 0 6px;
+        z-index: 1;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 500;
+        position: relative;
+        font-weight: bold;
+  
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: #dfe2ea;
+        border-radius: 8px 8px 0 0;
+        opacity: 0;
+        transition: .3s;
+        }
+    }
+    .navbar-item:not(.is-active):hover:before {
+    opacity: 1;
+    bottom: 0;
+    }
+    .navbar-item:not(.is-active):hover { 
+        color: black;
+    }
+
+    .navbar-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  transition: .4s;
+  height: 5px;
+  z-index: 1;
+  border-radius: 8px 8px 0 0;
+    }
+
+    @media (max-width: 580px) {
+  .navbar { overflow: auto; }
+    }
+    
+    
+    .header-spacing{
+        padding-bottom: 70px;
+    }
+    .header{        
+        padding-top: 10px;        
+        font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        color: rgba(0,0,0,.5);
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .5em;
+        position: absolute;
+        width: 100%; 
+        font-size: 2.8em;
+        z-index: 100;
+        text-shadow: .04em .04em 0 #99A3A4;
+    }
+    .header, header:after{
+        font-weight: 900;
+        color: white;
+        white-space: nowrap;
+        display: inline-block;
+
+        letter-spacing: .1em;
+ 
+    }
+    .header:after{
+        content: attr(data-shadow-text);
+        color: rgba(0,0,0,.35);
+        text-shadow: none;
+        position: absolute;
+        left: .0875em;
+        top: .0875em;
+        z-index: -1;
+        -webkit-mask-image: url(//f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png);
+    }
+    .form-location{
+        padding-top: 40px;
+        
+    }
+    .form{
+	font: 95% Arial, Helvetica, sans-serif;
+	max-width: 400px;
+	margin: 10px auto;
+	padding: 16px;
+	background-color: transparent;
+    border-radius: 10px;
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form select 
+{
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: #555;
+	font: 100% Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    text-align: center;
+}
+.form input[type="text"]:focus,
+.form input[type="number"]:focus,
+.form select:focus
+{
+	box-shadow: 0 0 5px #2CE532;
+	padding: 3%;
+	border: 1px solid #2CE532;
+    background-color: #2CE532;
+    color: white;
+}
+   .form input[type=number]::-webkit-inner-spin-button, 
+    .form input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+}
+
+.form input[type="submit"],
+.form input[type="button"]{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	padding: 3%;
+	background: white;
+	border-bottom: 2px solid black;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;	
+	color: black;
+    border-radius: 20px;
+    font: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+.form input[type="submit"]:hover,
+.form input[type="button"]:hover{
+	background: #2CE532;
+    color: #fff;
+}
+    .menu-name{    
+        text-align: center;
+        font-size: 40px;
+        font: Arial, Helvetica, sans-serif;
+        color: #2CE532;
+        font-weight: bold;
+        
+    }
+ 
+</style>
+<title>{% block title %}Add Employee{%endblock%}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>    
+    <div class="body-contents">    
+    <div class="header-spacing">
+    <div class="header">Piripun Properties (Pvt)Ltd.</div>
+    </div>
+    <div class="nav-box">
+    <nav class="navbar">  
+        <a class="navbar-item" href="/view_employee/">View / Pay</a>
+        <a class="navbar-item is-active" href="/add_employee/" style="color: black">Add Employee</a>        
+        <a class="navbar-item" href="/daily_work/">Record / Reset</a>
+        <a class="navbar-item"  href="/logout/">Logout</a>
+        <span class="navbar-indicator"></span>
+      </nav>
+    </div>
+
+    <div class="form-location">
+    <div class="menu-name">Add Employee</div>
+    <div class="form">
+        <form method="post" action="/add_employee/" name="myForm" onsubmit="return validateForm()">
+            <input type="text" required id="fname" name="fname" placeholder="Employee Full Name" onfocus="this.placeholder = ''"
+                   onblur="this.placeholder = 'Employee Name'" autocomplete="off"><br>
+            <input type="number" required id="daily-sal" name="daily-sal" placeholder="Employee Daily Salary" onfocus="this.placeholder = ''"
+                   onblur="this.placeholder = 'Employee Daily Salary'"><br>
+            <input type="submit" value="Submit">
+        </form>
+        </div>
+        </div>
+          </div>
+		      
+</body>
+</html>

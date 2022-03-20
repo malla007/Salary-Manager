@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>View Employee</title>
+    <style>
+     body{
+        background-color: #393939;
+    }
+    @import url('https://fonts.googleapis.com/css?family=DM+Sans:500,700&display=swap');
+    .nav-box{
+        box-sizing: border-box;
+    }
+    .nav-box{
+       text-align: center;
+    display: flex;
+    height: 60px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+
+    }
+    .navbar{
+          display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #2CE532;
+    padding: 0 20px;
+    border-radius: 40px;
+    }
+    .navbar-item{
+        color: #818181;
+        padding: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+        text-decoration: none;
+        transition: .3s;
+        margin: 0 6px;
+        z-index: 1;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 500;
+        position: relative;
+        font-weight: bold;
+  
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: #dfe2ea;
+        border-radius: 8px 8px 0 0;
+        opacity: 0;
+        transition: .3s;
+        }
+    }
+    .navbar-item:not(.is-active):hover:before {
+    opacity: 1;
+    bottom: 0;
+    }
+    .navbar-item:not(.is-active):hover { 
+        color: black;
+    }
+
+    .navbar-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  transition: .4s;
+  height: 5px;
+  z-index: 1;
+  border-radius: 8px 8px 0 0;
+    }
+
+    @media (max-width: 580px) {
+  .navbar { overflow: auto; }
+    }
+    
+    
+    .header-spacing{
+        padding-bottom: 70px;
+    }
+    .header{        
+        padding-top: 10px;        
+        font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        color: rgba(0,0,0,.5);
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .5em;
+        position: absolute;
+        width: 100%; 
+        font-size: 2.8em;
+        z-index: 100;
+        text-shadow: .04em .04em 0 #99A3A4;
+    }
+    .header, header:after{
+        font-weight: 900;
+        color: white;
+        white-space: nowrap;
+        display: inline-block;
+
+        letter-spacing: .1em;
+ 
+    }
+    .header:after{
+        content: attr(data-shadow-text);
+        color: rgba(0,0,0,.35);
+        text-shadow: none;
+        position: absolute;
+        left: .0875em;
+        top: .0875em;
+        z-index: -1;
+        -webkit-mask-image: url(//f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png);
+    }
+            .menu-name{    
+        text-align: center;
+        font-size: 40px;
+        font: Arial, Helvetica, sans-serif;
+        color: #2CE532;
+        font-weight: bold;
+        
+    }
+         .view-section{
+            float: left;
+            width: 50%;
+        }
+        .payment-section{
+            float: right;
+            widows: 50%;
+            margin: 0 13%;
+        }
+        .box{
+            text-align: center;
+            padding-bottom: 30px;
+            
+        }
+        .btn-container{
+            text-align: center;
+        }
+        .payment{
+            text-align: center;
+        }
+        .table-location{
+            text-align: center;
+        }
+        .select{
+           width: 250px;
+          height: 30px;
+          border: 1px solid #999;
+          font-size: 18px;
+          color: black;
+          background-color: #eee;
+          border-radius: 5px;
+            text-align: center;           
+        }
+        .select::placeholder{
+            text-align: center;
+            opacity: 0.5;
+        }
+        .btn{
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            width: 40%;
+            padding: 1%;
+            background: white;
+            border-bottom: 2px solid black;
+            border-top-style: none;
+            border-right-style: none;
+            border-left-style: none;	
+            color: black;
+            border-radius: 20px;
+            font: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .btn:hover{
+            background: #2CE532;
+            color: #fff;
+        }
+        .btn2{
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            width: 100%;
+            padding: 3%;
+            background: white;
+            border-bottom: 2px solid black;
+            border-top-style: none;
+            border-right-style: none;
+            border-left-style: none;	
+            color: black;
+            border-radius: 20px;
+            font: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .btn2:hover{
+            background: #2CE532;
+            color: #fff;
+        }
+        h3{
+            text-align: center;
+            color:#2CE532; 
+        }
+        table{
+            border-collapse: collapse;
+            width: 57%;
+            margin-left: 22%;
+            background-color: #99A3A4;
+            border-radius: 10px;            
+        }
+        .line{
+            border-top: 2px solid #ccc;
+        }
+        .var-name,.var-name-heading{
+          text-align: left;
+          padding: 8px;
+            font:95% Arial, Helvetica, sans-serif;
+        }
+        .var-name-heading{
+            font-weight: bold;
+        }
+        .var-val,.var-val-heading{
+            text-align: right;
+            padding-right: 8px;
+            font:95% Arial, Helvetica, sans-serif;
+        }
+        .var-val-heading{
+            font-weight: bold;
+        }
+        input[type="number"]
+        {
+            -webkit-transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -ms-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
+            outline: none;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            width: 100%;
+            background: #fff; 
+            border: 1px solid #ccc;
+            padding: 3%;
+            color: #555;
+            font: 100% Arial, Helvetica, sans-serif;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="number"]:focus
+        {
+            box-shadow: 0 0 5px #2CE532;
+            padding: 3%;
+            border: 1px solid #2CE532;
+            background-color: #2CE532;
+            color: white;
+        }
+        .border-box1{
+            border-right: 1px solid #2CE532;
+            padding-bottom: 50px;
+        }
+ 
+       
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    
+
+<body>
+        <div class="header-spacing">
+    <div class="header">Piripun Properties (Pvt)Ltd.</div>
+    </div>
+    <div class="nav-box">
+    <nav class="navbar">  
+        <a class="navbar-item is-active" href="/view_employee/" style="color: black">View / Pay</a>
+        <a class="navbar-item" href="/add_employee/" >Add Employee</a>        
+        <a class="navbar-item" href="/daily_work/">Record / Reset</a>
+        <a class="navbar-item"  href="/logout/">Logout</a>
+        <span class="navbar-indicator"></span>
+      </nav>
+    </div>        
+     <br>   
+    <div class="container">
+        <div class="view-section">
+        <div class="border-box1">
+        <div class="menu-name">View Payments</div>
+            <br>
+        <form action = "/view_employee/" method = "post">
+            <div class="box">
+                <select class = "select" name= name_list method="GET" required action="/view_employee/">
+                    <option disabled value='' SELECTED>Select an Employee...</option>
+                        {% for i in employees %}
+                    <option value= "{{i}}" >{{i}}</option>"                        
+                    <br>
+                        {% endfor %}
+                </select>
+            </div>
+            <div class="btn-container">
+                <input type="submit" name = "btn" class="btn" value="View">
+            </div>
+        </form>        
+        {% if emp_name|length %}
+            <div class ="emp-details">
+                <h3>Payments due for {{emp_name}}</h3>
+                <div class="table-location">
+                <table>
+                    <tr>
+                        <td class="var-name">Salary</td>
+                        <td class="var-val">Rs.{{daily_salary}}/=</td>
+                    </tr>
+                    <tr>
+                        <td class="var-name">No. of Days</td>
+                        <td class="var-val">{{days_worked}}</td>
+                    </tr>
+                    <tr>
+                        <td class="var-name">Total O/T payments</td>
+                        <td class="var-val">Rs.{{overtime_total}}/=</td>
+                    </tr>
+                    <tr>
+                        <td class="var-name">Payments Settled</td>
+                        <td class="var-val" style="color: red">Rs.{{advance_paid}}/=</td>
+                    </tr>
+                    <tr class="line">
+                        <th class="var-name-heading">Total payments due</th>
+                        <th class="var-val-heading">Rs.{{remaining_salary}}/=</th>
+                    </tr>
+                </table>
+                 </div>
+            </div>
+        {% else %}
+        {% endif %}
+        
+    </div>
+    </div>
+    </div>
+
+
+    <div class="container">
+        <div class="payment-section">
+            <div class="border-box2">
+    <div class="menu-name">Pay Employee</div>
+            <br>
+    <form action = "/view_employee/" method = "post">
+        <div class="box">
+        <select required class="select" name= name_list method="GET" action="/pay_employee/">
+            <option disabled value='' SELECTED>Select an Employee...</option>
+        {% for i in employees %}
+            <option value= "{{i}}">{{i}}</option>"
+        {% endfor %}
+        </select>
+        </div>
+        <div class="payment">
+        <input required type="number" id="payment" placeholder="Enter amount to be paid" onfocus="this.placeholder = ''"
+               onblur="this.placeholder = 'Enter amount to be paid'" name="payment">
+            </div>
+        <div class="btn-container">
+        <input type="submit" class="btn2" name = "btn" value="Pay">
+         </div>   
+    </form>
+    </div>
+    </div>
+    </div>
+        
+    
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
